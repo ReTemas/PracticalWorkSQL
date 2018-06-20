@@ -1,0 +1,95 @@
+--create table Tury(
+--tour_code int primary key,
+--Tour_name nvarchar(50),
+--Salary int,
+--Duration_Tour int
+--)
+--create table Countries(
+--country_code int primary key,
+--name_country nvarchar(50),
+--)
+
+--create table Tour_country(
+--tour_code int foreign key references Tury(tour_code),
+--country_code int foreign key references Countries(country_code)
+--)
+
+--create table Employees(
+--Employee_code int primary key,
+--FIO_Employee nvarchar(70),
+--)
+
+--create table Clients(
+--Client_code int primary key,
+--FIO nvarchar(70),
+--Adress nvarchar(40),
+--Phone varchar(50),
+--Gender nchar(1),
+--Birthday date,
+--Number_certification varchar(20),
+--Date_certification date,
+--)
+
+--create table Cashbox(
+--Employee_code int foreign key references Employees(Employee_code),
+--Client_code int foreign key references Clients(Client_code),
+--Amount int,
+--Date date,
+--Tour_code int foreign key references Tury(Tour_code)
+--)
+
+--create table Service(
+--Service_code int primary key,
+--Service_name nvarchar(50)
+--)
+
+--create table Contract_service(
+--Contract_code int foreign key references Contract(Contract_number),
+--Service_code int foreign key references Service(Service_code)
+--)
+
+--create table Contract(
+--Contract_number int primary key,
+--Client_code int foreign key references Clients(Client_code),
+--Employee_code int foreign key references Employees(Employee_code),
+--Tour_code int foreign key references Tury(Tour_code),
+--Date_Start_Tour date,
+--Date_End_Tour   date,
+--)
+
+--select  from Clients
+--where Adress = 'Грозный сити'
+
+--select avg(s.Contract_number) as NumberStudents
+--from Contract s
+--group by s.Contract_number
+
+--Create View MyView1 as
+--Select 
+--From Contract
+--Where Contract_number='1'
+
+--Create View MyView2 as
+--Select c.Amount
+--From CashBox c, Employees e
+--Where --c.Date  '2017-01-01' --and c.Date  '2017-12-30' and
+--e.Employee_code= c.Employee_code and e.FIO_Employee like 'Черный%'
+ 
+--Select tu.Tour_name, co.name_country
+--from Tury tu, CashBox cash, Tour_country tc, Countries co 
+--where tu.Tour_code = tc.tour_code and co.country_code=tc.country_code and cash.Tour_code = tu.Tour_code
+--and cash.Date like '2017%'
+
+--select tu.Salary, tu.Tour_name, co.name_country 
+--from Tury tu, Tour_country tc, Countries co
+--where co.name_country = 'Дагестан' and 
+--tc.country_code = co.country_code and 
+--tc.tour_code = tu.Tour_code
+
+--select tu.Salary, tu.Tour_name, co.name_country 
+--from Tury tu, Tour_country tc, Countries co
+--where tu.Salary  '300000' and tu.Salary  '230000' and 
+--tc.country_code = co.country_code and 
+--tc.tour_code = tu.Tour_code
+
+ 

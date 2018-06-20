@@ -1,0 +1,30 @@
+--Create Procedure Contracts
+--@Employee_code int
+--As
+--Select d.Contract_number,d.Employee_code,d.Tour_code
+--From Contract d
+--Where d.Employee_Code = @Employee_code and d.Date_Start_Tour like '2017%'
+----1
+
+--create procedure Females
+--as
+--select * from Clients
+--where Clients.Gender = 1 and Clients.Birthday > '1993-01-01' and Clients.Birthday < '2000-06-18'
+----2
+
+--create procedure Countries
+--@country_code int, 
+--@name_country nvarchar(50)
+--as 
+--insert Countries(country_code, name_country)  values
+--(@country_code, @name_country)
+----3
+
+--create procedure DateDays
+--@Contract_number int
+--as
+--select DAY(c.Date_End_Tour) - DAY(c.Date_Start_Tour)
+--from Contract c
+----4
+
+

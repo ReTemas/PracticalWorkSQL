@@ -1,0 +1,31 @@
+--create function Average(
+--@first int,
+--@second int,
+--@third int
+--)
+--returns int 
+--as
+--begin
+--declare @result int
+--set @result = (@first + @second + @third)/3
+--return ( 
+--select avg(@result) as result 
+--)
+--end
+
+--select dbo.Average(5,10,15)
+----1
+
+--create function Old(
+--@birthday date
+--)
+--returns int
+--as
+--begin
+--return (  select DATEDIFF(YEAR,@Birthday,GETDATE())
+--+(SIGN(DATEDIFF(DAY,@Birthday,DATEADD(YEAR,YEAR(@Birthday)-YEAR(GETDATE()),GETDATE())))-1)/2)
+--end
+
+
+--select dbo.Old('2002-07-11')
+----2 
